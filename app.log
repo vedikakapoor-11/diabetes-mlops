@@ -1,0 +1,8 @@
+2026-03-17 17:53:26,167 - INFO - Received input: pregnancies=2.0 glucose=130.0 blood_pressure=70.0 skin_thickness=20.0 insulin=80.0 bmi=25.0 diabetes_pedigree_function=0.5 age=30.0
+2026-03-17 17:53:26,170 - INFO - Prediction result: Not Diabetic
+2026-03-17 18:03:04,182 - INFO - Received input: pregnancies=2.0 glucose=140.0 blood_pressure=70.0 skin_thickness=20.0 insulin=80.0 bmi=25.0 diabetes_pedigree_function=0.5 age=30.0
+2026-03-17 18:03:04,203 - INFO - Prediction result: Not Diabetic
+2026-03-17 19:01:29,731 - INFO - Received input: pregnancies=2.0 glucose=120.0 blood_pressure=70.0 skin_thickness=20.0 insulin=85.0 bmi=25.5 diabetes_pedigree_function=0.5 age=30.0
+2026-03-17 19:01:29,757 - INFO - Prediction result: Not Diabetic
+2026-03-23 13:55:38,329 - INFO - Received input: pregnancies=2.0 glucose=120.0 blood_pressure=70.0 skin_thickness=20.0 insulin=85.0 bmi=25.5 diabetes_pedigree_function=0.5 age=30.0
+2026-03-23 13:55:38,365 - INFO - Prediction result: Not Diabetic
