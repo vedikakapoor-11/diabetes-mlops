@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Health Predictor</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            background: linear-gradient(to right, #36d1dc, #5b86e5);
+            font-family: Arial;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .card {
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        #resultBox {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .diabetic {
+            background-color: #ffcccc;
+            color: #a10000;
+        }
+
+        .not-diabetic {
+            background-color: #ccffcc;
+            color: #006400;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Diabetes Health Predictor</h1>
+    <p>Check your diabetes risk instantly using AI</p>
+</div>
+
+<div class="container">
+
+    <!-- ABOUT -->
+    <div class="card p-3">
+        <h4>About</h4>
+        <p>
+            This system predicts whether a person is diabetic using Machine Learning based on health parameters.
+        </p>
+    </div>
+
+    <!-- FORM -->
+    <div class="card p-4">
+        <h4>Enter Your Details</h4>
+
+        <form id="form">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="number" class="form-control" id="pregnancies" placeholder="Pregnancies" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="number" class="form-control" id="glucose" placeholder="Glucose" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="number" class="form-control" id="bp" placeholder="Blood Pressure" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="number" class="form-control" id="skin" placeholder="Skin Thickness" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="number" class="form-control" id="insulin" placeholder="Insulin" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="number" step="any" class="form-control" id="bmi" placeholder="BMI" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="number" step="any" class="form-control" id="dpf" placeholder="DPF" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="number" class="form-control" id="age" placeholder="Age" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark w-100">Predict</button>
+        </form>
+
+        <!-- RESULT -->
+        <div id="resultBox"></div>
+
+        <!-- CHART -->
+        <canvas id="myChart" style="margin-top:20px;"></canvas>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>Built using FastAPI + Machine Learning</p>
+    <p style="font-size:12px;">
+        ⚠️ This is a predictive model and not a medical diagnosis. Consult a doctor.
+    </p>
+</div>
+
+<script>
+document.getElementById("form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const resultBox = document.getElementById("resultBox");
+    resultBox.style.display = "block";
+    resultBox.innerHTML = '<div class="spinner-border"></div> Analyzing...';
+
+    const data = {
+        pregnancies: parseFloat(document.getElementById("pregnancies").value),
+        glucose: parseFloat(document.getElementById("glucose").value),
+        blood_pressure: parseFloat(document.getElementById("bp").value),
+        skin_thickness: parseFloat(document.getElementById("skin").value),
+        insulin: parseFloat(document.getElementById("insulin").value),
+        bmi: parseFloat(document.getElementById("bmi").value),
+        diabetes_pedigree_function: parseFloat(document.getElementById("dpf").value),
+        age: parseFloat(document.getElementById("age").value)
+    };
+
+    try {
+        const response = await fetch("http://127.0.0.1:8000/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "x-api-key": "mysecretkey"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        // Risk Level
+        let risk = "";
+        if (data.glucose < 120) risk = "Low Risk";
+        else if (data.glucose < 160) risk = "Medium Risk";
+        else risk = "High Risk";
+
+        // BMI Category
+        let bmiText = "";
+        if (data.bmi < 18.5) bmiText = "Underweight";
+        else if (data.bmi < 25) bmiText = "Normal";
+        else if (data.bmi < 30) bmiText = "Overweight";
+        else bmiText = "Obese";
+
+        if (result.result === "Diabetic") {
+            resultBox.className = "diabetic";
+        } else {
+            resultBox.className = "not-diabetic";
+        }
+
+        resultBox.innerHTML = `
+            <b>Result:</b> ${result.result} <br>
+            <b>Risk Level:</b> ${risk} <br>
+            <b>BMI Category:</b> ${bmiText} <br><br>
+
+            <h5>Precautions</h5>
+            <ul>
+                <li>Maintain healthy diet</li>
+                <li>Exercise regularly</li>
+                <li>Monitor sugar levels</li>
+                <li>Consult doctor</li>
+            </ul>
+
+            <h5>Your Input</h5>
+            <ul>
+                <li>Glucose: ${data.glucose}</li>
+                <li>BMI: ${data.bmi}</li>
+                <li>Age: ${data.age}</li>
+            </ul>
+        `;
+
+        // Chart
+        new Chart(document.getElementById("myChart"), {
+            type: "bar",
+            data: {
+                labels: ["Glucose", "BMI", "Age"],
+                datasets: [{
+                    label: "Health Values",
+                    data: [data.glucose, data.bmi, data.age]
+                }]
+            }
+        });
+
+    } catch (error) {
+        resultBox.className = "diabetic";
+        resultBox.innerHTML = "Backend connection failed!";
+    }
+});
+</script>
+
+</body>
+</html>

@@ -6,3 +6,19 @@
 2026-03-17 19:01:29,757 - INFO - Prediction result: Not Diabetic
 2026-03-23 13:55:38,329 - INFO - Received input: pregnancies=2.0 glucose=120.0 blood_pressure=70.0 skin_thickness=20.0 insulin=85.0 bmi=25.5 diabetes_pedigree_function=0.5 age=30.0
 2026-03-23 13:55:38,365 - INFO - Prediction result: Not Diabetic
+2026-03-24 20:25:45,785 - INFO - Received input: pregnancies=2.0 glucose=120.0 blood_pressure=50.0 skin_thickness=80.0 insulin=10.0 bmi=30.0 diabetes_pedigree_function=0.5 age=23.0
+2026-03-24 20:25:45,844 - INFO - Prediction result: Not Diabetic
+2026-03-24 20:43:17,156 - INFO - Received input: pregnancies=120.0 glucose=50.0 blood_pressure=80.0 skin_thickness=30.0 insulin=45.0 bmi=34.0 diabetes_pedigree_function=0.5 age=20.0
+2026-03-24 20:43:17,164 - INFO - Prediction result: Diabetic
+2026-03-24 20:49:06,869 - INFO - Received input: pregnancies=120.0 glucose=50.0 blood_pressure=80.0 skin_thickness=30.0 insulin=45.0 bmi=34.0 diabetes_pedigree_function=0.5 age=20.0
+2026-03-24 20:49:06,870 - INFO - Prediction result: Diabetic
+2026-03-24 20:50:27,919 - INFO - Received input: pregnancies=120.0 glucose=50.0 blood_pressure=80.0 skin_thickness=30.0 insulin=45.0 bmi=34.0 diabetes_pedigree_function=0.5 age=20.0
+2026-03-24 20:50:27,928 - INFO - Prediction result: Diabetic
+2026-03-24 22:08:58,346 - INFO - Received input: pregnancies=120.0 glucose=50.0 blood_pressure=80.0 skin_thickness=30.0 insulin=45.0 bmi=34.0 diabetes_pedigree_function=0.5 age=20.0
+2026-03-24 22:08:58,348 - INFO - Prediction result: Diabetic
+2026-03-24 22:41:27,026 - INFO - Request #1 - Received input: pregnancies=20.0 glucose=80.0 blood_pressure=30.0 skin_thickness=45.0 insulin=34.0 bmi=22.0 diabetes_pedigree_function=0.5 age=20.0
+2026-03-24 22:41:27,026 - INFO - Prediction result: Not Diabetic
+2026-03-24 22:41:27,026 - INFO - Response time: 0.0000 seconds
+2026-03-24 22:44:43,414 - INFO - Request #2 - Received input: pregnancies=120.0 glucose=80.0 blood_pressure=30.0 skin_thickness=45.0 insulin=34.0 bmi=65.0 diabetes_pedigree_function=0.5 age=20.0
+2026-03-24 22:44:43,414 - INFO - Prediction result: Diabetic
+2026-03-24 22:44:43,414 - INFO - Response time: 0.0000 seconds
