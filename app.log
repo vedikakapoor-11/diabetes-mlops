@@ -22,3 +22,87 @@
 2026-03-24 22:44:43,414 - INFO - Request #2 - Received input: pregnancies=120.0 glucose=80.0 blood_pressure=30.0 skin_thickness=45.0 insulin=34.0 bmi=65.0 diabetes_pedigree_function=0.5 age=20.0
 2026-03-24 22:44:43,414 - INFO - Prediction result: Diabetic
 2026-03-24 22:44:43,414 - INFO - Response time: 0.0000 seconds
+2026-04-09 14:53:28,921 - INFO - Request #1 - Received input: pregnancies=2.0 glucose=150.0 blood_pressure=80.0 skin_thickness=20.0 insulin=85.0 bmi=32.0 diabetes_pedigree_function=0.5 age=40.0
+2026-04-09 14:53:28,986 - INFO - Prediction result: Diabetic
+2026-04-09 14:53:28,986 - INFO - Response time: 0.0670 seconds
+2026-04-15 09:48:17,618 - INFO - Request #1 - Received input: pregnancies=120.0 glucose=3.0 blood_pressure=55.0 skin_thickness=23.0 insulin=80.0 bmi=35.0 diabetes_pedigree_function=1.5 age=18.0
+2026-04-15 09:48:17,622 - INFO - Prediction result: Diabetic
+2026-04-15 09:48:17,622 - INFO - Response time: 0.0057 seconds
+2026-04-15 12:04:41,680 - INFO - Request #2 - Received input: pregnancies=10.0 glucose=1.0 blood_pressure=111.0 skin_thickness=111000.0 insulin=100.0 bmi=1.0 diabetes_pedigree_function=1.0 age=12.0
+2026-04-15 12:04:41,731 - INFO - Prediction result: Diabetic
+2026-04-15 12:04:41,733 - INFO - Response time: 0.0518 seconds
+2026-04-15 12:06:35,155 - INFO - Request #1 - Received input: pregnancies=13.0 glucose=40.0 blood_pressure=33.0 skin_thickness=55.0 insulin=12.0 bmi=23.0 diabetes_pedigree_function=16.0 age=0.0
+2026-04-15 12:06:35,189 - INFO - Prediction result: Diabetic
+2026-04-15 12:06:35,190 - INFO - Response time: 0.0349 seconds
+2026-04-15 12:07:22,593 - INFO - Request #2 - Received input: pregnancies=12.0 glucose=45.0 blood_pressure=134.0 skin_thickness=23.0 insulin=546.0 bmi=143.0 diabetes_pedigree_function=234.0 age=1.0
+2026-04-15 12:07:22,601 - INFO - Prediction result: Diabetic
+2026-04-15 12:07:22,601 - INFO - Response time: 0.0082 seconds
+2026-04-15 12:07:56,322 - INFO - Request #3 - Received input: pregnancies=12.0 glucose=45.0 blood_pressure=134.0 skin_thickness=23.0 insulin=546.0 bmi=143.0 diabetes_pedigree_function=234.0 age=1111.0
+2026-04-15 12:07:56,323 - INFO - Prediction result: Diabetic
+2026-04-15 12:07:56,324 - INFO - Response time: 0.0015 seconds
+2026-04-15 12:08:01,850 - INFO - Request #4 - Received input: pregnancies=12.0 glucose=45.0 blood_pressure=134.0 skin_thickness=23.0 insulin=546.0 bmi=143.0 diabetes_pedigree_function=234.0 age=11.0
+2026-04-15 12:08:01,852 - INFO - Prediction result: Diabetic
+2026-04-15 12:08:01,852 - INFO - Response time: 0.0017 seconds
+2026-04-15 12:08:02,613 - INFO - Request #5 - Received input: pregnancies=12.0 glucose=45.0 blood_pressure=134.0 skin_thickness=23.0 insulin=546.0 bmi=143.0 diabetes_pedigree_function=234.0 age=11.0
+2026-04-15 12:08:02,616 - INFO - Prediction result: Diabetic
+2026-04-15 12:08:02,616 - INFO - Response time: 0.0026 seconds
+2026-04-15 12:08:03,090 - INFO - Request #6 - Received input: pregnancies=12.0 glucose=45.0 blood_pressure=134.0 skin_thickness=23.0 insulin=546.0 bmi=143.0 diabetes_pedigree_function=234.0 age=11.0
+2026-04-15 12:08:03,091 - INFO - Prediction result: Diabetic
+2026-04-15 12:08:03,091 - INFO - Response time: 0.0009 seconds
+2026-04-15 12:08:03,664 - INFO - Request #7 - Received input: pregnancies=12.0 glucose=45.0 blood_pressure=134.0 skin_thickness=23.0 insulin=546.0 bmi=143.0 diabetes_pedigree_function=234.0 age=11.0
+2026-04-15 12:08:03,665 - INFO - Prediction result: Diabetic
+2026-04-15 12:08:03,665 - INFO - Response time: 0.0017 seconds
+2026-04-15 12:08:03,881 - INFO - Request #8 - Received input: pregnancies=12.0 glucose=45.0 blood_pressure=134.0 skin_thickness=23.0 insulin=546.0 bmi=143.0 diabetes_pedigree_function=234.0 age=11.0
+2026-04-15 12:08:03,882 - INFO - Prediction result: Diabetic
+2026-04-15 12:08:03,882 - INFO - Response time: 0.0016 seconds
+2026-04-15 12:08:04,128 - INFO - Request #9 - Received input: pregnancies=12.0 glucose=45.0 blood_pressure=134.0 skin_thickness=23.0 insulin=546.0 bmi=143.0 diabetes_pedigree_function=234.0 age=11.0
+2026-04-15 12:08:04,130 - INFO - Prediction result: Diabetic
+2026-04-15 12:08:04,130 - INFO - Response time: 0.0023 seconds
+2026-04-15 12:08:08,380 - INFO - Request #10 - Received input: pregnancies=10.0 glucose=1.0 blood_pressure=111.0 skin_thickness=111000.0 insulin=100.0 bmi=1.0 diabetes_pedigree_function=1.0 age=12.0
+2026-04-15 12:08:08,383 - INFO - Prediction result: Diabetic
+2026-04-15 12:08:08,383 - INFO - Response time: 0.0037 seconds
+2026-04-15 13:55:37,484 - INFO - Request #1 - Received input: pregnancies=134.0 glucose=23.0 blood_pressure=23.0 skin_thickness=132.0 insulin=12.0 bmi=234.0 diabetes_pedigree_function=1.0 age=11.0
+2026-04-15 13:55:37,493 - INFO - Prediction result: Diabetic
+2026-04-15 13:55:37,493 - INFO - Response time: 0.0088 seconds
+2026-04-15 14:25:16,519 - INFO - Request #2 - Received input: pregnancies=134.0 glucose=23.0 blood_pressure=23.0 skin_thickness=132.0 insulin=12.0 bmi=234.0 diabetes_pedigree_function=1.0 age=11.0
+2026-04-15 14:25:16,543 - INFO - Prediction result: Diabetic
+2026-04-15 14:25:16,543 - INFO - Response time: 0.0241 seconds
+2026-04-15 14:25:18,812 - INFO - Request #3 - Received input: pregnancies=134.0 glucose=23.0 blood_pressure=23.0 skin_thickness=132.0 insulin=12.0 bmi=234.0 diabetes_pedigree_function=1.0 age=11.0
+2026-04-15 14:25:18,815 - INFO - Prediction result: Diabetic
+2026-04-15 14:25:18,815 - INFO - Response time: 0.0031 seconds
+2026-04-15 14:25:21,793 - INFO - Request #4 - Received input: pregnancies=134.0 glucose=23.0 blood_pressure=23.0 skin_thickness=132.0 insulin=12.0 bmi=23.0 diabetes_pedigree_function=1.0 age=11.0
+2026-04-15 14:25:21,796 - INFO - Prediction result: Diabetic
+2026-04-15 14:25:21,796 - INFO - Response time: 0.0031 seconds
+2026-04-15 23:46:27,325 - ERROR - Model load failed: No module named 'numpy._core'
+2026-04-15 23:47:51,654 - WARNING - Unauthorized access attempt
+2026-04-15 23:59:55,055 - ERROR - Model load failed: No module named 'numpy._core'
+2026-04-16 00:00:06,775 - ERROR - Model load failed: No module named 'numpy._core'
+2026-04-16 00:08:43,586 - INFO - Request #1 - Input: pregnancies=1.0 glucose=120.0 blood_pressure=70.0 skin_thickness=20.0 insulin=80.0 bmi=25.0 diabetes_pedigree_function=0.5 age=30.0
+2026-04-16 00:08:43,586 - ERROR - Error: X has 8 features, but RandomForestClassifier is expecting 10 features as input.
+2026-04-16 00:13:52,595 - INFO - Request #1 - Input: pregnancies=1.0 glucose=120.0 blood_pressure=70.0 skin_thickness=20.0 insulin=80.0 bmi=25.0 diabetes_pedigree_function=0.5 age=30.0
+2026-04-16 00:13:52,596 - ERROR - Error: X has 8 features, but RandomForestClassifier is expecting 10 features as input.
+2026-04-16 00:15:12,169 - ERROR - Model loading failed: [Errno 2] No such file or directory: 'model.joblib'
+2026-04-16 00:18:47,124 - INFO - Request #1 - Input: pregnancies=1.0 glucose=120.0 blood_pressure=70.0 skin_thickness=20.0 insulin=80.0 bmi=25.0 diabetes_pedigree_function=0.5 age=30.0
+2026-04-16 00:18:47,132 - INFO - Prediction: Not Diabetic
+2026-04-16 00:18:47,132 - INFO - Response time: 0.0084s
+2026-04-16 00:19:51,554 - INFO - Request #2 - Input: pregnancies=2.0 glucose=120.0 blood_pressure=70.0 skin_thickness=20.0 insulin=80.0 bmi=25.0 diabetes_pedigree_function=0.5 age=30.0
+2026-04-16 00:19:51,563 - INFO - Prediction: Not Diabetic
+2026-04-16 00:19:51,563 - INFO - Response time: 0.0088s
+2026-04-16 00:26:40,541 - INFO - Request #1 - Input: pregnancies=1.0 glucose=120.0 blood_pressure=70.0 skin_thickness=20.0 insulin=80.0 bmi=25.0 diabetes_pedigree_function=0.5 age=30.0
+2026-04-16 00:26:40,552 - INFO - Prediction: Not Diabetic
+2026-04-16 00:26:40,552 - INFO - Response time: 0.0107s
+2026-04-16 00:27:37,694 - INFO - Request #2 - Input: pregnancies=6.0 glucose=180.0 blood_pressure=90.0 skin_thickness=35.0 insulin=200.0 bmi=35.0 diabetes_pedigree_function=1.2 age=50.0
+2026-04-16 00:27:37,701 - INFO - Prediction: Diabetic
+2026-04-16 00:27:37,701 - INFO - Response time: 0.0064s
+2026-04-16 00:28:17,494 - INFO - Request #3 - Input: pregnancies=6.0 glucose=180.0 blood_pressure=90.0 skin_thickness=35.0 insulin=200.0 bmi=35.0 diabetes_pedigree_function=1.2 age=50.0
+2026-04-16 00:28:17,502 - INFO - Prediction: Diabetic
+2026-04-16 00:28:17,502 - INFO - Response time: 0.0082s
+2026-04-16 00:28:39,889 - INFO - Request #4 - Input: pregnancies=1.0 glucose=120.0 blood_pressure=70.0 skin_thickness=20.0 insulin=80.0 bmi=25.0 diabetes_pedigree_function=0.5 age=30.0
+2026-04-16 00:28:39,894 - INFO - Prediction: Not Diabetic
+2026-04-16 00:28:39,894 - INFO - Response time: 0.0055s
+2026-04-16 00:28:46,686 - INFO - Request #5 - Input: pregnancies=6.0 glucose=180.0 blood_pressure=90.0 skin_thickness=35.0 insulin=200.0 bmi=35.0 diabetes_pedigree_function=1.2 age=50.0
+2026-04-16 00:28:46,695 - INFO - Prediction: Diabetic
+2026-04-16 00:28:46,695 - INFO - Response time: 0.0095s
+2026-04-16 00:38:54,337 - INFO - Request #1 - Input: pregnancies=6.0 glucose=180.0 blood_pressure=90.0 skin_thickness=35.0 insulin=200.0 bmi=35.0 diabetes_pedigree_function=1.2 age=50.0
+2026-04-16 00:38:54,347 - INFO - Prediction: Diabetic
+2026-04-16 00:38:54,347 - INFO - Response time: 0.0100s

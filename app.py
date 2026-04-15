@@ -1,5 +1,4 @@
-#Exp10: Monitoring & Logging 
-#loggiong in
+# ---------------- LOGGING ----------------
 import logging
 
 logging.basicConfig(
@@ -10,22 +9,20 @@ logging.basicConfig(
 
 request_count = 0
 
-#Exp 2
-from fastapi import FastAPI, Request   # ✅ added Request here (needed below)
+# ---------------- IMPORTS ----------------
+from fastapi import FastAPI, Request, Header, HTTPException
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import pickle
 import numpy as np
 import time
-from fastapi import Header, HTTPException
-from fastapi.responses import JSONResponse  # ✅ added here (needed below)
+import joblib
 
-#Expt 4: Authentication (API Key)
+# ---------------- AUTH ----------------
 API_KEY = "mysecretkey"
 
-# Create app
+# ---------------- APP ----------------
 app = FastAPI()
-
-from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
@@ -35,11 +32,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load model
-with open("final_diabetes_model.pkl", "rb") as file:
-    model = pickle.load(file)
+# ---------------- LOAD MODEL ----------------
+model = None
 
-# Input schema
+try:
+    model = joblib.load("model.joblib")
+    print("Model loaded successfully")
+except Exception as e:
+    print("Model loading failed:", e)
+    logging.error(f"Model loading failed: {str(e)}")
+    model = None
+
+# ---------------- INPUT SCHEMA ----------------
 class DiabetesInput(BaseModel):
     pregnancies: float
     glucose: float
@@ -50,29 +54,32 @@ class DiabetesInput(BaseModel):
     diabetes_pedigree_function: float
     age: float
 
-# Home route
+# ---------------- HOME ROUTE ----------------
 @app.get("/")
 def home():
     return {"message": "API running successfully"}
 
-# Prediction route
+# ---------------- PREDICT ROUTE ----------------
 @app.post("/predict")
 def predict(data: DiabetesInput, x_api_key: str = Header(None)):
     global request_count
     request_count += 1
 
-    # Authentication
+    # API KEY CHECK
     if x_api_key != API_KEY:
         logging.warning("Unauthorized access attempt")
         raise HTTPException(status_code=401, detail="Invalid API Key")
 
+    # MODEL CHECK
+    if model is None:
+        return {"error": "Model not loaded properly"}
+
     try:
-        # ⏱ START TIME
         start_time = time.time()
 
-        # Log input
-        logging.info(f"Request #{request_count} - Received input: {data}")
+        logging.info(f"Request #{request_count} - Input: {data}")
 
+        # Convert input to array
         input_array = np.array([[ 
             data.pregnancies,
             data.glucose,
@@ -84,18 +91,16 @@ def predict(data: DiabetesInput, x_api_key: str = Header(None)):
             data.age
         ]])
 
+        # Prediction
         prediction = model.predict(input_array)[0]
         result = "Diabetic" if prediction == 1 else "Not Diabetic"
 
-        # Log result
-        logging.info(f"Prediction result: {result}")
-
-        # ⏱ END TIME
+        # Timing
         end_time = time.time()
         response_time = end_time - start_time
 
-        # Log response time
-        logging.info(f"Response time: {response_time:.4f} seconds")
+        logging.info(f"Prediction: {result}")
+        logging.info(f"Response time: {response_time:.4f}s")
 
         return {
             "prediction": int(prediction),
@@ -105,11 +110,10 @@ def predict(data: DiabetesInput, x_api_key: str = Header(None)):
         }
 
     except Exception as e:
-        logging.error(f"Error occurred: {str(e)}")
-        return {"error": "Something went wrong"}
+        logging.error(f"Error: {str(e)}")
+        return {"error": str(e)}
 
-
-#EXP 3 - Global error handler
+# ---------------- GLOBAL ERROR HANDLER ----------------
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     logging.error(f"Unhandled error: {str(exc)}")
